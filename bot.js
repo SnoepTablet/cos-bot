@@ -11,9 +11,9 @@ bot.on("message", function(message) {
 
   if (message.author.equals(bot.user)) return;
 
-  if (!message.content.startsWith(botconfig.prefix)) return;
+  if (!message.content.startsWith("!")) return;
 
-  var args = message.content.substring(botconfig.prefix.length).split(" ");
+  var args = message.content.substring("!".length).split(" ");
 
   switch (args[0].toLowerCase()) {
 
