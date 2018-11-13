@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 
 bot.on("ready", function() {
 
-  console.log("De WolfTopia is klaar voor gebruik!");
+  console.log("De Testbot is klaar voor gebruik!");
 
 });
 
@@ -19,6 +19,14 @@ bot.on("message", function(message) {
 
     case "ip":
       message.channel.send("Hallo " + user + "! Het IP van de server is: /n/**WolfTopia.g-s.nu");
+      break;
+    case "info":
+      message.channel.send("Hallo " + user + "!/n/Wat leuk dat jij bent geïnteresseerd in onze informatie!/n//n/**__Wolfs Legacy__**");
+      var infoembed = new Discord.RichEmbed()
+         .setColor("#15f153")
+         .addField("**Opgericht op:", message.guild.createdAt)
+         .addField("*Eigenaar:**", "@wolf");
+      return message.channel.send(infoembed)
       break;
     default:
       message.channel.sendMessage("Sorry, Dit command kennen wij niet.."); 
